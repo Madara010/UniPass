@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>COVID19 Universal Pass - DMRR</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <meta property="og:title" content="COVID19 Universal Pass - DMRR" />
+    <meta
+      property="og:description"
+      content="This Blockchain assured Universal Pass is issued by Department of Disaster Management, Relief and Rehabilitation, Govt. of Maharashtra. Verify the document to authenticate its validity"
+    />
+    <meta
+      name="description"
+      content="This Blockchain assured Universal Pass is issued by Department of Disaster Management, Relief and Rehabilitation, Govt. of Maharashtra. Verify the document to authenticate its validity"
+    />
+    <style>
+      body {
+        margin: 0px;
+      }
+      #ring-1 {
+        animation: loadRotate linear 2s infinite;
+        -moz-animation: 2s linear 0s none infinite loadRotate;
+        -webkit-animation: loadRotate 2s linear 0s infinite;
+      }
+      #ring-2 {
+        animation: loadRotate linear 1s infinite;
+        -moz-animation: 1s linear 0s none infinite loadRotate;
+        -webkit-animation: loadRotate 1s linear 0s infinite;
+      }
+      #ring-3 {
+        animation: loadRotate linear 2s infinite;
+        -moz-animation: 2s linear 0s none infinite loadRotate;
+        -webkit-animation: loadRotate 2s linear 0s infinite;
+      }
+
+      @keyframes loadRotate {
+        0% {
+          transform: rotate(0deg);
+          transform-origin: 50% 50%;
+        }
+        100% {
+          transform: rotate(360deg);
+          transform-origin: 50% 50%;
+        }
+      }
+      @-moz-keyframes spin {
+        0% {
+          transform: rotate(0deg);
+          transform-origin: 50% 50%;
+        }
+        100% {
+          transform: rotate(360deg);
+          transform-origin: 50% 50%;
+        }
+      }
+      @-webkit-keyframes spin {
+        0% {
+          transform: rotate(0deg);
+          transform-origin: 50% 50%;
+        }
+        100% {
+          transform: rotate(360deg);
+          transform-origin: 50% 50%;
+        }
+      }
+    </style>
+  </head>
+  <script>
+    $(document).ready(function () {
+      $("#download, #download1").click(function () {
+        html2canvas($("#cert"), {
+          onrendered: function (canvas) {
+            var img = new Image();
+            img.src = "/cert.png";
+            var imgData = canvas.toDataURL("image/png");
+            var doc = new jsPDF("p", "px", [760, 1100]);
+            doc.addImage(img, "PNG", 20, 0);
+            doc.save("uni-pass.pdf");
+          },
+        });
+      });
+    });
+  </script>
+  <body>
+    <div id="loading" style="display: none">
+      <div
+        style="
+          min-height: 100vh;
+          align-items: center !important;
+          justify-content: center !important;
+          display: flex !important;
+        "
+      >
+        <div style="width: 150px">
+          <svg
+            version="1.1"
+            id="L7"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 100 100"
+            enable-background="new 0 0 100 100"
+            xml:space="preserve"
+          >
+            <path
+              fill="#173f5f"
+              d="M31.6,3.5C5.9,13.6-6.6,42.7,3.5,68.4c10.1,25.7,39.2,38.3,64.9,28.1l-3.1-7.9c-21.3,8.4-45.4-2-53.8-23.3c-8.4-21.3,2-45.4,23.3-53.8L31.6,3.5z"
+              id="ring-1"
+            ></path>
+            <path
+              fill="#20639b"
+              d="M42.3,39.6c5.7-4.3,13.9-3.1,18.1,2.7c4.3,5.7,3.1,13.9-2.7,18.1l4.1,5.5c8.8-6.5,10.6-19,4.1-27.7c-6.5-8.8-19-10.6-27.7-4.1L42.3,39.6z"
+              id="ring-2"
+            ></path>
+            <path
+              fill="#3caea3"
+              d="M82,35.7C74.1,18,53.4,10.1,35.7,18S10.1,46.6,18,64.3l7.6-3.4c-6-13.5,0-29.3,13.5-35.3s29.3,0,35.3,13.5L82,35.7z"
+              id="ring-3"
+            ></path>
+          </svg>
+          <h4
+            style="
+              text-align: center;
+              font-size: 1.25rem;
+              margin-top: 30px;
+              font-family: roboto;
+            "
+          >
+            Fetching Pass, Please wait...
+          </h4>
+        </div>
+      </div>
+    </div>
+    <div id="main-content" style="display: block">
+      <!-- DESKTOP -->
+      <div class="d-none d-xl-block">
+        <header>
+          <nav class="navbar py-0">
+            <p
+              class="navbar-brand mb-0"
+              href="https://print2block.com/"
+              target="_blank"
+            >
+              <img
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNi4xNTQiIGhlaWdodD0iMjcuMzY5IiB2aWV3Qm94PSIwIDAgMTYuMTU0IDI3LjM2OSI+CiAgICA8ZGVmcz4KICAgICAgICA8c3R5bGU+CiAgICAgICAgICAgIC5jbHMtMXtmaWxsOiMwMDgzZTN9CiAgICAgICAgPC9zdHlsZT4KICAgIDwvZGVmcz4KICAgIDxwYXRoIGlkPSJMb2dvIiBkPSJNMTI2NjAgNjEyNi4wMjF2LTguNTdsNy45NzktNC4zNjUgOC4xNzYgNC4zNjV2OC41N2wtOC4xNzYgNC4zNDl6bTIuMjk0LTEyLjAyMmExIDEgMCAxIDEgMSAxIDEgMSAwIDAgMS0xLjAwMS0uOTk5em05LTEuNWEuNS41IDAgMSAxIC41LjUuNS41IDAgMCAxLS41MDItLjQ5OXptLTUtNGExLjUgMS41IDAgMSAxIDEuNSAxLjUgMS41IDEuNSAwIDAgMS0xLjQ5OS0xLjQ5OXptMy00YS41LjUgMCAxIDEgLjUuNS41LjUgMCAwIDEtLjQ5OS0uNDk5em0tNC0uNWExIDEgMCAxIDEgMSAxIDEgMSAwIDAgMS0xLjAwMS0uOTk5eiIgY2xhc3M9ImNscy0xIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTI2NjAgLTYxMDMuMDAxKSIvPgo8L3N2Zz4K"
+                width="16"
+                class="d-inline-block align-top mx-2"
+                alt=""
+              />This Document is Issued on Blockchain by
+              <strong
+                >Department of Disaster Management, Relief and Rehabilitation,
+                Govt. of Maharashtra</strong
+              >, powered by:
+              <strong
+                ><a href="https://print2block.com/" target="_blank"
+                  >DocChain.io</a
+                ></strong
+              >
+            </p>
+            <div id="google_translate_element_1"></div>
+          </nav>
+        </header>
+        <section class="document-section">
+          <div class="container-fluid">
+            <div class="expiry-warning"></div>
+            <div class="revoke-warning"></div>
+            <div class="row">
+              <div class="col-lg-7">
+                <div class="text-center" id="cert">
+                  <img
+                    src="./cert.png"
+                    class="cert-img"
+                    style="height: 900px; border: 1px solid black"
+                  />
+                </div>
+                <div class="footer-btn-section" style="margin-top: 30px">
+                  <div class="d-flex align-items-center">
+                    <div class="ml-auto">
+                      <a href="https://print2block.com/">
+                        <img
+                          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNSIgaGVpZ2h0PSIzNSIgdmlld0JveD0iMCAwIDM1IDM1Ij4KICAgIDxkZWZzPgogICAgICAgIDxzdHlsZT4KICAgICAgICAgICAgLmNscy0xe2ZpbGw6IzAwODNlM30uY2xzLTIsLmNscy00e2ZpbGw6bm9uZX0uY2xzLTJ7c3Ryb2tlOiMwMDgzZTN9LmNscy0ze3N0cm9rZTpub25lfQogICAgICAgIDwvc3R5bGU+CiAgICA8L2RlZnM+CiAgICA8ZyBpZD0iU2hhcmUiPgogICAgICAgIDxnIGlkPSJzaGFyZS0yIiBkYXRhLW5hbWU9InNoYXJlIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMCAxMCkiPgogICAgICAgICAgICA8ZyBpZD0iR3JvdXBfNDIiIGRhdGEtbmFtZT0iR3JvdXAgNDIiPgogICAgICAgICAgICAgICAgPHBhdGggaWQ9IlBhdGhfMTciIGQ9Ik0xNC4yNDggOS41MzNhMi43NDcgMi43NDcgMCAwIDAtMi4xNTMgMS4wNDdMNy40MTMgOC4yMDdhMi42OTQgMi42OTQgMCAwIDAgLjEwNS0uNzA3IDIuNjcyIDIuNjcyIDAgMCAwLS4xMjUtLjc2N2w0LjY2MS0yLjM2M2EyLjcxNyAyLjcxNyAwIDEgMC0uNTYxLTEuNjM4IDIuNjgyIDIuNjgyIDAgMCAwIC4xMDYuNzA5TDYuOTE4IDUuODE1YTIuNzMxIDIuNzMxIDAgMSAwIC4wNDEgMy4zMmw0LjY1OCAyLjM2NWEyLjY3OSAyLjY3OSAwIDAgMC0uMTI2Ljc2OSAyLjc1NyAyLjc1NyAwIDEgMCAyLjc1Ni0yLjczNHoiIGNsYXNzPSJjbHMtMSIgZGF0YS1uYW1lPSJQYXRoIDE3IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMi4wMDYpIi8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICAgICAgPGcgaWQ9IkVsbGlwc2VfOCIgY2xhc3M9ImNscy0yIiBkYXRhLW5hbWU9IkVsbGlwc2UgOCI+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjE3LjUiIGN5PSIxNy41IiByPSIxNy41IiBjbGFzcz0iY2xzLTMiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iMTcuNSIgY3k9IjE3LjUiIHI9IjE3IiBjbGFzcz0iY2xzLTQiLz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo="
+                          width="35"
+                          alt=""
+                          style="cursor: pointer"
+                          data-toggle="popover"
+                          data-placement="top"
+                          data-original-title=""
+                          title=""
+                      /></a>
+                    </div>
+                    <div class="ml-3 mr-auto">
+                      <button id="download1" class="btn download-btn px-4">
+                        Download
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-5">
+                <div class="document-header-bg">
+                  <div class="bg-overlay">
+                    <div class="document-header-qr">
+                      <img
+                        class="qr rounded"
+                        width="100"
+                        alt=""
+                        src="./smallqr.png"
+                      />
+                    </div>
+                    <div class="document-header-text-wrap">
+                      <h5 class="mb-0 doc_id"></h5>
+                      <p class="mb-0" id="issuername">
+                        Department of Disaster Management, Relief and
+                        Rehabilitation, Govt. of Maharashtra
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="detail-wrap pl-2">
+                  <div class="d-flex align-items-center py-2">
+                    <div class="py-0">
+                      <p class="mb-0">Issue Date</p>
+                      <h6 class="mb-0 published">
+                        Sun Dec 05 2021 18:36:13 GMT+0530 (India Standard Time)
+                      </h6>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center py-2">
+                    <div class="py-0">
+                      <p class="mb-0">Issuer</p>
+                      <h6 class="mb-0">
+                        Department of Disaster Management, Relief and
+                        Rehabilitation, Govt. of Maharashtra
+                      </h6>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center py-2">
+                    <div class="py-0">
+                      <p class="mb-0">Transaction ID</p>
+                      <h6 class="mb-0 txid" style="word-break: break-all">
+                        4a6bb37f75568c375fb3e4c0144085e197db5062521344a6514067b48fae036f
+                      </h6>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center py-2">
+                    <div class="py-0">
+                      <p class="mb-0">Hash (SHA256)</p>
+                      <h6 class="mb-0 hash" style="word-break: break-all">
+                        63dca589e03b13c79ad4080cd9944e672f29734ef6383f3f24a7db105d457c9b
+                      </h6>
+                    </div>
+                  </div>
+                  <div id="verify-section">
+                    <div
+                      class="d-flex align-items-center justify-content-center"
+                    >
+                      <div class="py-5">
+                        <button
+                          class="
+                            btn
+                            custom-btn
+                            px-4
+                            font-weight-bold
+                            pass-verify
+                          "
+                        >
+                          VERIFY
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- MOBILE -->
+      <div class="d-sm-block d-md-block d-lg-block d-xl-none">
+        <header>
+          <nav class="navbar py-0">
+            <a class="navbar-brand" href="https://print2block.com/">
+              <img
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNi4xNTQiIGhlaWdodD0iMjcuMzY5IiB2aWV3Qm94PSIwIDAgMTYuMTU0IDI3LjM2OSI+CiAgICA8ZGVmcz4KICAgICAgICA8c3R5bGU+CiAgICAgICAgICAgIC5jbHMtMXtmaWxsOiMwMDgzZTN9CiAgICAgICAgPC9zdHlsZT4KICAgIDwvZGVmcz4KICAgIDxwYXRoIGlkPSJMb2dvIiBkPSJNMTI2NjAgNjEyNi4wMjF2LTguNTdsNy45NzktNC4zNjUgOC4xNzYgNC4zNjV2OC41N2wtOC4xNzYgNC4zNDl6bTIuMjk0LTEyLjAyMmExIDEgMCAxIDEgMSAxIDEgMSAwIDAgMS0xLjAwMS0uOTk5em05LTEuNWEuNS41IDAgMSAxIC41LjUuNS41IDAgMCAxLS41MDItLjQ5OXptLTUtNGExLjUgMS41IDAgMSAxIDEuNSAxLjUgMS41IDEuNSAwIDAgMS0xLjQ5OS0xLjQ5OXptMy00YS41LjUgMCAxIDEgLjUuNS41LjUgMCAwIDEtLjQ5OS0uNDk5em0tNC0uNWExIDEgMCAxIDEgMSAxIDEgMSAwIDAgMS0xLjAwMS0uOTk5eiIgY2xhc3M9ImNscy0xIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTI2NjAgLTYxMDMuMDAxKSIvPgo8L3N2Zz4K"
+                width="16"
+                class="d-inline-block align-top mx-2"
+                alt=""
+              />Powered by <span style="color: #0088ff">DocChain.io</span>
+              <div id="google_translate_element_2"></div>
+            </a>
+          </nav>
+        </header>
+        <section class="document-mobile" id="first" style="display: none">
+          <div class="container-fluid p-0">
+            <div class="expiry-warning"></div>
+            <div class="revoke-warning"></div>
+            <div class="document-header-bg mb-3">
+              <div class="bg-overlay">
+                <div class="document-header-qr">
+                  <img class="qr rounded img-width" src="./smallqr.png" />
+                </div>
+                <div class="document-header-text-wrap">
+                  <h5 class="mb-0 doc_id" style="font-size: 20px"></h5>
+                  <p class="mb-3" style="font-size: 14px">
+                    Department of Disaster Management, Relief and
+                    Rehabilitation, Govt. of Maharashtra
+                  </p>
+                </div>
+                <div class="document-header-btn-group">
+                  <button id="doc" class="btn view-doc-mob-btn px-4">
+                    View Doc</button
+                  ><br />
+                  <button class="btn view-doc-mob-btn px-4 pass-verify">
+                    Verify
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="detail-mob-wrapper pl-2">
+              <div class="row align-items-center">
+                <div class="col-sm-4 py-3">
+                  <p class="mb-0">Issue Date</p>
+                  <h6 class="mb-0 published">
+                    Sun Dec 05 2021 18:36:13 GMT+0530 (India Standard Time)
+                  </h6>
+                </div>
+                <div class="col-sm-4 py-3">
+                  <p class="mb-0">Issuer</p>
+                  <h6 class="mb-0">
+                    Department of Disaster Management, Relief and
+                    Rehabilitation, Govt. of Maharashtra
+                  </h6>
+                </div>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="py-3">
+                  <p class="mb-0">Transaction ID:</p>
+                  <h6 class="mb-0 txid" style="word-break: break-all">
+                    4a6bb37f75568c375fb3e4c0144085e197db5062521344a6514067b48fae036f
+                  </h6>
+                </div>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="py-3">
+                  <p class="mb-0">Hash (SHA256):</p>
+                  <h6 class="mb-0 hash" style="word-break: break-all">
+                    63dca589e03b13c79ad4080cd9944e672f29734ef6383f3f24a7db105d457c9b
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="document-mobile" id="side">
+          <div class="container-fluid p-0">
+            <div class="expiry-warning"></div>
+            <div class="revoke-warning"></div>
+            <div class="document-header-bg mb-4">
+              <div class="bg-overlay">
+                <div class="document-header-qr">
+                  <img class="qr rounded img-width" src="./smallqr.png" />
+                </div>
+                <div class="document-header-text-wrap">
+                  <h5 class="mb-0 doc_id" style="font-size: 20px"></h5>
+                  <p class="mb-3" style="font-size: 14px">
+                    Department of Disaster Management, Relief and
+                    Rehabilitation, Govt. of Maharashtra
+                  </p>
+                </div>
+                <div class="document-header-btn-group">
+                  <button
+                    id="info"
+                    class="btn view-doc-mob-btn px-4"
+                    onclick="location.href='https://print2block.com'"
+                  >
+                    View Info</button
+                  ><br />
+                  <button
+                    class="btn view-doc-mob-btn px-4 pass-verify"
+                    onclick="location.href='https://print2block.com'"
+                  >
+                    Verify
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="content-mob-wrap" id="task">
+              <div class="cert-div" id="cert">
+                <img
+                  src="./cert.png"
+                  class="cert-img w-100"
+                  style="border: 1px solid black"
+                />
+              </div>
+              <div class="footer-btn-section pt-3">
+                <div class="d-flex align-items-center justify-content-end">
+                  <div class="ml-auto">
+                    <a href="https://print2block.com/">
+                      <img
+                        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNSIgaGVpZ2h0PSIzNSIgdmlld0JveD0iMCAwIDM1IDM1Ij4KICAgIDxkZWZzPgogICAgICAgIDxzdHlsZT4KICAgICAgICAgICAgLmNscy0xe2ZpbGw6IzAwODNlM30uY2xzLTIsLmNscy00e2ZpbGw6bm9uZX0uY2xzLTJ7c3Ryb2tlOiMwMDgzZTN9LmNscy0ze3N0cm9rZTpub25lfQogICAgICAgIDwvc3R5bGU+CiAgICA8L2RlZnM+CiAgICA8ZyBpZD0iU2hhcmUiPgogICAgICAgIDxnIGlkPSJzaGFyZS0yIiBkYXRhLW5hbWU9InNoYXJlIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMCAxMCkiPgogICAgICAgICAgICA8ZyBpZD0iR3JvdXBfNDIiIGRhdGEtbmFtZT0iR3JvdXAgNDIiPgogICAgICAgICAgICAgICAgPHBhdGggaWQ9IlBhdGhfMTciIGQ9Ik0xNC4yNDggOS41MzNhMi43NDcgMi43NDcgMCAwIDAtMi4xNTMgMS4wNDdMNy40MTMgOC4yMDdhMi42OTQgMi42OTQgMCAwIDAgLjEwNS0uNzA3IDIuNjcyIDIuNjcyIDAgMCAwLS4xMjUtLjc2N2w0LjY2MS0yLjM2M2EyLjcxNyAyLjcxNyAwIDEgMC0uNTYxLTEuNjM4IDIuNjgyIDIuNjgyIDAgMCAwIC4xMDYuNzA5TDYuOTE4IDUuODE1YTIuNzMxIDIuNzMxIDAgMSAwIC4wNDEgMy4zMmw0LjY1OCAyLjM2NWEyLjY3OSAyLjY3OSAwIDAgMC0uMTI2Ljc2OSAyLjc1NyAyLjc1NyAwIDEgMCAyLjc1Ni0yLjczNHoiIGNsYXNzPSJjbHMtMSIgZGF0YS1uYW1lPSJQYXRoIDE3IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMi4wMDYpIi8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICAgICAgPGcgaWQ9IkVsbGlwc2VfOCIgY2xhc3M9ImNscy0yIiBkYXRhLW5hbWU9IkVsbGlwc2UgOCI+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjE3LjUiIGN5PSIxNy41IiByPSIxNy41IiBjbGFzcz0iY2xzLTMiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iMTcuNSIgY3k9IjE3LjUiIHI9IjE3IiBjbGFzcz0iY2xzLTQiLz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo="
+                        width="35"
+                        alt=""
+                        style="cursor: pointer"
+                        data-toggle="popover"
+                        data-placement="top"
+                        data-original-title=""
+                        title=""
+                    /></a>
+                  </div>
+                  <div class="mr-auto ml-2">
+                    <button id="download" class="btn download-btn px-4">
+                      Download
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div
+        class="modal fade"
+        id="moreinfo"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="auditModal"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="auditModal">
+                Blockchain Verified - More Info
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row" id="pdfFrame" style="display: none">
+                <div class="container">
+                  <iframe width="400" height="566"></iframe>
+                </div>
+              </div>
+              <div class="row more-info-content m-3">
+                <div class="col-sm-4 offset-sm-1 contact_number_label">
+                  Contact Number
+                </div>
+                <div class="col-sm-7 contact_number_value">
+                  <strong>8******924</strong>
+                </div>
+                <div class="col-sm-4 offset-sm-1 vaxedData_name_label">
+                  Name
+                </div>
+                <div class="col-sm-7 vaxedData_name_value">
+                  <strong>Yuvraj Ashok Patil</strong>
+                </div>
+                <div class="col-sm-4 offset-sm-1 vaxedData_birth_year_label">
+                  Year of Birth
+                </div>
+                <div class="col-sm-7 vaxedData_birth_year_value">
+                  <strong>1998</strong>
+                </div>
+                <div class="col-sm-4 offset-sm-1 vaxedData_age_label">Age</div>
+                <div class="col-sm-7 vaxedData_age_value">
+                  <strong>23</strong>
+                </div>
+                <div class="col-sm-4 offset-sm-1 vaxedData_gender_label">
+                  Gender
+                </div>
+                <div class="col-sm-7 vaxedData_gender_value">
+                  <strong>Male</strong>
+                </div>
+                <div
+                  class="
+                    col-sm-4
+                    offset-sm-1
+                    vaxedData_beneficiary_reference_id_label
+                  "
+                >
+                  Beneficiary ID
+                </div>
+                <div class="col-sm-7 vaxedData_beneficiary_reference_id_value">
+                  <strong>73313579011300</strong>
+                </div>
+                <div class="col-sm-4 offset-sm-1 vaxedData_dose1_date_label">
+                  Dose 1 Date
+                </div>
+                <div class="col-sm-7 vaxedData_dose1_date_value">
+                  <strong>12-07-2021</strong>
+                </div>
+                <div class="col-sm-4 offset-sm-1 vaxedData_dose2_date_label">
+                  Dose 2 Date
+                </div>
+                <div class="col-sm-7 vaxedData_dose2_date_value">
+                  <strong>27-10-2021</strong>
+                </div>
+                <div class="col-sm-4 offset-sm-1 vaccinated_label">
+                  Vaccinated
+                </div>
+                <div class="col-sm-7 vaccinated_value">
+                  <strong>true</strong>
+                </div>
+                <div class="col-sm-4 offset-sm-1 vaxedData_vaccine_label">
+                  Vaccine
+                </div>
+                <div class="col-sm-7 vaxedData_vaccine_value">
+                  <strong>COVISHIELD</strong>
+                </div>
+                <div
+                  class="
+                    col-sm-4
+                    offset-sm-1
+                    vaxedData_vaccination_status_label
+                  "
+                >
+                  Vaccination Status
+                </div>
+                <div class="col-sm-7 vaxedData_vaccination_status_value">
+                  <strong>Vaccinated</strong>
+                </div>
+                <div class="col-sm-4 offset-sm-1 source_label">Source</div>
+                <div class="col-sm-7 source_value">
+                  <strong>COWIN Verified</strong>
+                </div>
+                <div
+                  class="col-sm-4 offset-sm-1 vaxedData_verifier_label d-none"
+                >
+                  Manually Verified by
+                </div>
+                <div class="col-sm-7 vaxedData_verifier_value d-none"></div>
+                <div class="col-sm-4 offset-sm-1 category_label">
+                  Pass Category
+                </div>
+                <div class="col-sm-7 category_value">
+                  <strong>Level 3</strong>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn blue-btn" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-custom">
+        <p class="py-3">
+          All rights reserved.
+          <strong
+            ><a
+              href="https://print2block.com/"
+              class="notranslate"
+              target="_blank"
+              >Department of Disaster Management, Relief and Rehabilitation,
+              Govt. of Maharahstra © <span class="copy-date">2021</span></a
+            ></strong
+          >
+        </p>
+      </div>
+    </div>
+    <div id="error-14DAY" style="display: none">
+      <div
+        class="row"
+        style="
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 50%;
+          height: 30%;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 15%;
+        "
+      >
+        <div class="col-md-6">
+          <svg
+            style="width: 100%"
+            width="256"
+            height="256"
+            viewBox="0 0 1792 1792"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5-103 385.5-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103zm128 1247v-190q0-14-9-23.5t-22-9.5h-192q-13 0-23 10t-10 23v190q0 13 10 23t23 10h192q13 0 22-9.5t9-23.5zm-2-344l18-621q0-12-10-18-10-8-24-8h-220q-14 0-24 8-10 6-10 18l17 621q0 10 10 17.5t24 7.5h185q14 0 23.5-7.5t10.5-17.5z"
+              fill="#17a2b8"
+            ></path>
+          </svg>
+        </div>
+        <div class="col-md-6 py-3">
+          <h1 class="display-1 text-left font-weight-bold">Sorry!</h1>
+          <p class="text-justify">
+            It looks like you got your 2nd Vaccination dose within the last 14
+            days. Your Universal Pass will be active from
+            <span class="14day-date font-weight-bold"></span>, please check
+            back.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="error-404" style="display: none">
+      <div
+        class="row"
+        style="
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 50%;
+          height: 30%;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 15%;
+        "
+      >
+        <div class="col-md-6">
+          <svg
+            style="width: 100%"
+            width="256"
+            height="256"
+            viewBox="0 0 1792 1792"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1024 1376v-192q0-14-9-23t-23-9h-192q-14 0-23 9t-9 23v192q0 14 9 23t23 9h192q14 0 23-9t9-23zm256-672q0-88-55.5-163t-138.5-116-170-41q-243 0-371 213-15 24 8 42l132 100q7 6 19 6 16 0 25-12 53-68 86-92 34-24 86-24 48 0 85.5 26t37.5 59q0 38-20 61t-68 45q-63 28-115.5 86.5t-52.5 125.5v36q0 14 9 23t23 9h192q14 0 23-9t9-23q0-19 21.5-49.5t54.5-49.5q32-18 49-28.5t46-35 44.5-48 28-60.5 12.5-81zm384 192q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"
+              fill="#17a2b8"
+            ></path>
+          </svg>
+        </div>
+        <div class="col-md-6 py-3">
+          <h1 class="display-1 text-left font-weight-bold">404</h1>
+          <p>NOT FOUND</p>
+          <p class="text-justify">
+            Sorry, No Pass found. kindly check the url.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="error-502" style="display: none">
+      <div
+        class="row"
+        style="
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 50%;
+          height: 30%;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 15%;
+        "
+      >
+        <div class="col-md-6">
+          <svg
+            style="width: 100%"
+            width="256"
+            height="256"
+            viewBox="0 0 1792 1792"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5-103 385.5-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103zm128 1247v-190q0-14-9-23.5t-22-9.5h-192q-13 0-23 10t-10 23v190q0 13 10 23t23 10h192q13 0 22-9.5t9-23.5zm-2-344l18-621q0-12-10-18-10-8-24-8h-220q-14 0-24 8-10 6-10 18l17 621q0 10 10 17.5t24 7.5h185q14 0 23.5-7.5t10.5-17.5z"
+              fill="#dc3545"
+            ></path>
+          </svg>
+        </div>
+        <div class="col-md-6 py-3">
+          <h1 class="display-1 text-left font-weight-bold">502</h1>
+          <p>ER...BAD GATEWAY</p>
+          <p class="text-justify">
+            Sorry, the server is not reachable, either because it is down or
+            restarting. We have been notified and will fix it as soon as
+            possible. Kindly try again after sometime.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="error-504" style="display: none">
+      <div
+        class="row"
+        style="
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 50%;
+          height: 30%;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 15%;
+        "
+      >
+        <div class="col-md-6">
+          <svg
+            style="width: 100%"
+            width="256"
+            height="256"
+            viewBox="0 0 1792 1792"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5-103 385.5-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103zm128 1247v-190q0-14-9-23.5t-22-9.5h-192q-13 0-23 10t-10 23v190q0 13 10 23t23 10h192q13 0 22-9.5t9-23.5zm-2-344l18-621q0-12-10-18-10-8-24-8h-220q-14 0-24 8-10 6-10 18l17 621q0 10 10 17.5t24 7.5h185q14 0 23.5-7.5t10.5-17.5z"
+              fill="#dc3545"
+            ></path>
+          </svg>
+        </div>
+        <div class="col-md-6 py-3">
+          <h1 class="display-1 text-left font-weight-bold">504</h1>
+          <p>ER...REQUEST TIMEOUT</p>
+          <p class="text-justify">
+            Sorry, your request is taking more time to process due to huge
+            traffic we are receiving. We have been notified and will fix it as
+            soon as possible. Kindly try again after sometime.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="error-50x" style="display: none">
+      <div
+        class="row"
+        style="
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 50%;
+          height: 30%;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 15%;
+        "
+      >
+        <div class="col-md-6">
+          <svg
+            style="width: 100%"
+            width="256"
+            height="256"
+            viewBox="0 0 1792 1792"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5-103 385.5-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103zm128 1247v-190q0-14-9-23.5t-22-9.5h-192q-13 0-23 10t-10 23v190q0 13 10 23t23 10h192q13 0 22-9.5t9-23.5zm-2-344l18-621q0-12-10-18-10-8-24-8h-220q-14 0-24 8-10 6-10 18l17 621q0 10 10 17.5t24 7.5h185q14 0 23.5-7.5t10.5-17.5z"
+              fill="#dc3545"
+            ></path>
+          </svg>
+        </div>
+        <div class="col-md-6 py-3">
+          <h1 class="display-1 text-left font-weight-bold">50X</h1>
+          <p>ER...AN ERROR?</p>
+          <p class="text-justify" id="cus-error-msg"></p>
+        </div>
+      </div>
+    </div>
+    <img src="./data/DMRR.jpg" style="display: none" id="DMRR.jpg" />
+    <img src="./data/VAX.png" style="display: none" id="VAX.png" />
+    <a
+      class="btn btn-info"
+      id="dwl-link"
+      style="display: none"
+      download="uni-pass.pdf"
+      >Download PDF</a
+    >
+    <link rel="stylesheet" href="./data/combined.css" />
+  </body>
+</html>
