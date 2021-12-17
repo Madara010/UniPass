@@ -84,7 +84,7 @@
         html2canvas($("#cert"), {
           onrendered: function (canvas) {
             var img = new Image();
-            img.src = "/cert.png";
+            img.src = "./data/cert.png";
             var imgData = canvas.toDataURL("image/png");
             var doc = new jsPDF("p", "px", [760, 1100]);
             doc.addImage(img, "PNG", 20, 0);
@@ -182,7 +182,7 @@
               <div class="col-lg-7">
                 <div class="text-center" id="cert">
                   <img
-                    src="./cert.png"
+                    src="./data/cert.png"
                     class="cert-img"
                     style="height: 900px; border: 1px solid black"
                   />
@@ -401,7 +401,7 @@
             <div class="content-mob-wrap" id="task">
               <div class="cert-div" id="cert">
                 <img
-                  src="./cert.png"
+                  src="./data/cert.png"
                   class="cert-img w-100"
                   style="border: 1px solid black"
                 />
